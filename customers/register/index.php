@@ -5,7 +5,18 @@ require_once "../../_database/config.php";
 // get form data after user submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    echo "done";
+    $username = $_POST["username"];
+    $phoneNum = $_POST["phonenum"];
+    $address = $_POST["address"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    
+    $sql = "INSERT INTO customer (CustomerEmail, CustomerPassword, CustomerPhoneNo, CustomerAddress) 
+            VALUES ('$email', '$password', '$phoneNum', '$address')";
+
+    $result = mysqli_query($conn, $sql);
+    if ($result == false) echo "error";
 }
 
 
@@ -57,25 +68,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
     </nav>
 
+    <h1 class="alert alert-info" style="text-align:center;">Register an account</h1>
     
     <!-- Register Form -->
      <form action="index.php" method="POST" class="form-horizontal" >
         <div class="form-group">
             <label class="control-label col-sm-2">Username:</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                <input type="text" class="form-control" name="username" placeholder="Enter username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Phone Number:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="phonenum" placeholder="Enter phone number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Address:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="address" placeholder="Enter address">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2">Email:</label>
             <div class="col-sm-5">
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
             <div class="col-sm-5">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                <input type="password" class="form-control" name="password" placeholder="Enter password">
             </div>
         </div>
         <div class="form-group">
