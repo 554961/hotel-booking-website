@@ -4,4 +4,4 @@
 
 ### Sitemap : https://miro.com/app/board/uXjVGfnW4GQ=/
 
-Hotel booking system with database integration
+Hotel booking system 
