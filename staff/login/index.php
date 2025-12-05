@@ -7,7 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $sql = "SELECT (StaffEmail, StaffPassword) FROM staff WHERE StaffEmail='$email'";
+    $sql = "SELECT StaffEmail, StaffPassword FROM staff";
+
+    $result = mysqli_query($conn, $sql);
+    if ($result == false) {echo "ERROR: Invalid details";}
+    else
+    {
+        echo "correct details";
+    }
 }
 
 ?>
@@ -36,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Password:</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" name="pwd" placeholder="Enter password">
+                <input type="password" class="form-control" name="password" placeholder="Enter password">
                 </div>
             </div>
             <div class="form-group">
