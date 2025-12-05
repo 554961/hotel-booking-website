@@ -1,6 +1,7 @@
 <?php
 // link config
 require_once "_database/config.php";
+require_once "templates/base_page.php";
 
 ?>
 
@@ -13,6 +14,12 @@ require_once "_database/config.php";
     <!-- bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body
+        {
+            background-color: gray;
+        }
+    </style>
 </head>
 <body>
     
@@ -23,7 +30,7 @@ require_once "_database/config.php";
                 <a class="navbar-brand" href="#">HotelsForHours.com</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="#">Find Your Next Stay</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
@@ -40,6 +47,7 @@ require_once "_database/config.php";
             </ul>
         </div>
     </nav>
+
 
 
 
