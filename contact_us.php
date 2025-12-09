@@ -12,7 +12,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Contact us</title>
     <!-- bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -34,7 +34,7 @@ session_start();
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="#">Find Your Next Stay</a></li>
-                <li><a href="contact_us.php">Contact Us</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- CHECK LOGIN STATUS  -->
@@ -54,7 +54,14 @@ session_start();
     </nav>
 
 
+	<h1 class="alert alert-info">Contact us here<h1>
+	
+	<!-- Contact form -->
+	<form method="POST" action="contact-us.php">
+	
+		<label>*Make form </label>
 
+	</form
 
 
 

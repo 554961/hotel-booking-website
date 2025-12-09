@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <!-- CHECK LOGIN STATUS  -->
                  <?php
                     if ($GLOBALS["loggedIn"] == false) { ?>
-                <li><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="../register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="../login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php } else { ?>
                  <li><a href="customers/home"><span class="glyphicon glyphicon-user"></span> Your Profile</a></li>                       
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
     </nav>
 
-    <h1 class="alert alert-info">Register an account</h1>
+    <h1 class="alert alert-info">Login</h1>
     
     <!-- Register Form -->
      <form action="index.php" method="POST" class="form-horizontal" >
@@ -77,24 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <label class="control-label col-sm-2">Username:</label>
             <div class="col-sm-5">
                 <input type="text" class="form-control" name="username" placeholder="Enter username">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2">Phone Number:</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="phonenum" placeholder="Enter phone number">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2">Address:</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="address" placeholder="Enter address">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-2">Email:</label>
-            <div class="col-sm-5">
-                <input type="email" class="form-control" name="email" placeholder="Enter email">
             </div>
         </div>
         <div class="form-group">

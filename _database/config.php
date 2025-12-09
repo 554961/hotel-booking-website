@@ -5,7 +5,6 @@ $user = "root";
 $password = "";
 $database = "hotel_system";
 
-$GLOBALS["loggedIn"] = false;
 
 // connect to hotel database & checking connection
 $conn = mysqli_connect($host, $user, $password, $database);

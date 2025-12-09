@@ -2,19 +2,41 @@
 // include config
 require_once "../../_database/config.php";
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $sql = "SELECT StaffEmail, StaffPassword FROM staff";
+	$sql = "SELECT StaffEmail, StaffPassword FROM staff WHERE StaffEmail='$email'";
 
     $result = mysqli_query($conn, $sql);
-    if ($result == false) {echo "ERROR: Invalid details";}
-    else
-    {
-        echo "correct details";
-    }
+    if ($result == false) {die("ERROR: Invalid Query");}
+   
+	//check if details match
+	if ($row = mysqli_fetch_assoc($result))
+	{
+		if ($row["StaffPassword"] === $password)
+		{
+			//
+			// LOGIN SUCCESS!
+			//
+			echo "Password is correct";
+
+			// set login variables to true
+			$_SESSION["loggedIn"] = true;
+			$_SESSION["username"] = $email;
+			header("location: ../../");
+			
+		}
+		else echo "Wrong Password";
+	}
+	else 
+	{
+		echo "Email not known.";
+	}
+
 }
 
 ?>
