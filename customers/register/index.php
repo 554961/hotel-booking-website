@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $result = mysqli_query($conn, $sql);
     if ($result == false) echo "error";
+	else {echo "query succeeded.";}
 }
 
 
@@ -68,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
     </nav>
 
-    <h1 class="alert alert-info" style="text-align:center;">Register an account</h1>
+    <h1 class="alert alert-info">Register an account</h1>
     
     <!-- Register Form -->
      <form action="index.php" method="POST" class="form-horizontal" >
