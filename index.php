@@ -23,7 +23,7 @@ require_once "templates/base_page.php";
 </head>
 <body>
     
-    <!-- Navbar -->
+    <!-- Navbar  -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
