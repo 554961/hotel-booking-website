@@ -5,6 +5,19 @@ require_once "templates/base_page.php";
 
 session_start();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+	$email = $_POST["email"];
+	$msg = $_POST["msg"];
+
+	$qry = "INSERT INTO contact (ContactMsg, ContactEmail) VALUES ('$msg', '$email')";
+	$result = mysqli_query($conn, $qry);
+
+	if ($result == false) die("Error: could not insert into db");
+	echo "Done";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -54,12 +67,25 @@ session_start();
     </nav>
 
 
-	<h1 class="alert alert-info">Contact us here<h1>
+	<h1 style="text-align:center;" class="alert alert-info">Contact us here<h1>
 	
 	<!-- Contact form -->
-	<form method="POST" action="contact-us.php">
+	<form method="POST" action="contact_us.php">
+	<div class="form-group" style="width:50%; text-align:center; margin:auto;"> 
+		<label>Your Message</label>
+		<input class="form-control" type="text" name="msg" style="height:150px">
+		<hr>
+	</div>
+	<div class="form-group"  style="width:25%; text-align:center; margin:auto;">
 	
-		<label>*Make form </label>
+		<label>Your Email</label>
+		<input class="form-control" type="email" name="email">
+	</div>
+	<div class="form-group"  style="width:25%; text-align:center; margin:auto;">
+		<hr>
+		
+		<button value="submit" type="submit"> Submit </button>
+	</div>
 
 	</form
 

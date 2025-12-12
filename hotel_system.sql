@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `booking` (
-  `BookingID` int(11) NOT NULL,
+  `BookingID` int(11) NOT NULL PRIMARY KEY,
   `BookingDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -39,7 +39,7 @@ CREATE TABLE `booking` (
 --
 
 CREATE TABLE `customer` (
-  `CustomerID` int(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL PRIMARY KEY,
   `CustomerEmail` varchar(255) DEFAULT NULL,
   `CustomerPassword` varchar(255) DEFAULT NULL,
   `CustomerPhoneNo` varchar(255) DEFAULT NULL,
@@ -60,7 +60,7 @@ INSERT INTO `customer` (`CustomerID`, `CustomerEmail`, `CustomerPassword`, `Cust
 --
 
 CREATE TABLE `hotel` (
-  `HotelID` int(11) NOT NULL,
+  `HotelID` int(11) NOT NULL PRIMARY KEY,
   `HotelLocation` varchar(255) DEFAULT NULL,
   `HotelDescription` varchar(500) DEFAULT NULL,
   `HotelRating` varchar(255) DEFAULT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE `hotel` (
 --
 
 CREATE TABLE `room` (
-  `RoomID` int(11) NOT NULL,
+  `RoomID` int(11) NOT NULL PRIMARY KEY,
   `RoomPrice` int(11) DEFAULT NULL,
   `RoomCapacity` varchar(255) DEFAULT NULL,
   `RoomDescription` varchar(500) DEFAULT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE `room` (
 --
 
 CREATE TABLE `staff` (
-  `StaffID` int(11) NOT NULL,
+  `StaffID` INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `StaffEmail` varchar(255) DEFAULT NULL,
   `StaffPassword` varchar(255) DEFAULT NULL,
   `StaffName` varchar(255) DEFAULT NULL
@@ -100,52 +100,3 @@ CREATE TABLE `staff` (
 
 INSERT INTO `staff` (`StaffID`, `StaffEmail`, `StaffPassword`, `StaffName`) VALUES
 (1, 'admin@hotel.com', 'admin123', 'Admin Man');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `booking`
---
-ALTER TABLE `booking`
-  ADD PRIMARY KEY (`BookingID`);
-
---
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`CustomerID`);
-
---
--- Indexes for table `hotel`
---
-ALTER TABLE `hotel`
-  ADD PRIMARY KEY (`HotelID`);
-
---
--- Indexes for table `room`
---
-ALTER TABLE `room`
-  ADD PRIMARY KEY (`RoomID`);
-
---
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`StaffID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `staff`
---
-ALTER TABLE `staff`
-  MODIFY `StaffID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
